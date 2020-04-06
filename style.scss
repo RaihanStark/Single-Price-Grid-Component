@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+$cyan: hsl(179, 62%, 43%);
+$bright-yellow: hsl(71, 73%, 54%);
+$light-gray: hsl(204, 43%, 93%);
+$grayish-blue: hsl(218, 22%, 67%);
+
+$body-font-size: 16px;
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: $light-gray;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "join join"
+    "subscription reason";
+  grid-auto-columns: 1fr;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+#join {
+  grid-area: join;
+  background-color: white;
+  padding: 1em 2em;
+
+  h3 {
+    color: $cyan;
+    font-weight: 700;
+  }
+  p:first-of-type {
+    color: $bright-yellow;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  p {
+    color: $grayish-blue;
+    margin-top: 0.5em;
+    line-height: 1.5em;
+  }
+}
+
+#subscription {
+  grid-area: subscription;
+  background-color: $cyan;
+  padding: 1em 2em;
+  color: white;
+
+  h2 {
+    display: inline-block;
+    margin: 0;
+  }
+
+  span {
+    color: #75dcde;
+    margin-left: 0.5em;
+  }
+  p {
+    margin: 0.5em 0 2.5em 0;
+  }
+
+  .button {
+    text-decoration: none;
+    color: white;
+    background-color: $bright-yellow;
+    padding: 1em 6em;
+    border-radius: 0.5em;
+    -webkit-box-shadow: 0px 4px 16px -2px rgba(0, 0, 0, 0.164);
+    -moz-box-shadow: 0px 4px 16px -2px rgba(0, 0, 0, 0.164);
+    box-shadow: 0px 4px 16px -2px rgba(0, 0, 0, 0.164);
+    border: 0;
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    width: 100%;
+    &:hover {
+      background-color: hsla(71, 73%, 54%, 0.705);
+    }
+  }
+}
+
+#reason {
+  grid-area: reason;
+  background-color: #4abebd;
+  padding: 1em 2em;
+
+  h3 {
+    color: white;
+  }
+
+  p {
+    color: #a1ebeb;
+    line-height: 1.25em;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 7em 0;
+  }
+  .grid {
+    grid-template-areas:
+      "join"
+      "subscription"
+      "reason";
+  }
+
+  .button {
+    margin-bottom: 1em;
+  }
+}
